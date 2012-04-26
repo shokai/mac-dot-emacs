@@ -38,6 +38,7 @@
 (yas/initialize)
 
 (require 'ajc-java-complete-config)
+(set 'ajc-tag-file "~/.emacs.d/ajc.tag")
 (add-hook 'java-mode-hook 'ajc-java-complete-mode)
 (add-hook 'find-file-hook 'ajc-4-jsp-find-file-hook)
 
