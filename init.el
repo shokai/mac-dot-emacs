@@ -30,6 +30,9 @@
 ;;scala-mode
 (require 'scala-mode-auto)
 
+;;javascript-mode
+(setq js-indent-level 2)
+
 ;;auto complete
 (require 'auto-complete)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
