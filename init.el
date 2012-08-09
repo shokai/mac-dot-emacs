@@ -49,8 +49,8 @@
 (define-key ac-complete-mode-map "\C-n" 'ac-next)
 (define-key ac-complete-mode-map "\C-p" 'ac-previous)
 
-(require 'yasnippet-bundle)
-(yas/initialize)
+(require 'yasnippet)
+(yas/global-mode 1)
 
 (require 'ajc-java-complete-config)
 (set 'ajc-tag-file "~/.emacs.d/ajc.tag")
