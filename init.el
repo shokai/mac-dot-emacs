@@ -50,7 +50,15 @@
 (define-key ac-complete-mode-map "\C-p" 'ac-previous)
 
 (require 'yasnippet-bundle)
+(setq yas/root-directory "~/.emacs.d/snippets")
+(yas/load-directory yas/root-directory)
 (yas/initialize)
+
+(require 'cedet)
+(add-to-list 'load-path "~/.emacs.d/vendor/malabar-mode")
+(require 'malabar-mode)
+(setq malabar-groovy-lib-dir "~/.emacs.d/vendor/malabar-mode/lib")
+(add-to-list 'auto-mode-alist '("\\.java$" . malabar-mode))
 
 (require 'ajc-java-complete-config)
 (set 'ajc-tag-file "~/.emacs.d/ajc.tag")
