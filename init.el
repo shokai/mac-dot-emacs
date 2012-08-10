@@ -1,6 +1,10 @@
 (add-to-list 'load-path "~/.emacs.d")
-
 (load "~/.emacs.d/scratch.el")
+
+(setq-default tab-width 4 indent-tabs-mode nil) ;; disable tab
+(setq backup-inhibited t) ;; disable tmp file
+(define-key global-map [?¥] [?\\])
+(global-set-key "\C-x;" 'ns-toggle-fullscreen) ;; for Cocoa Emacs
 
 ;;ruby-mode
 (add-to-list 'auto-mode-alist '("\\.r[bu]$" . ruby-mode))

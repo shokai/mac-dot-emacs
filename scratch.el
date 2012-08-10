@@ -1,5 +1,3 @@
-(setq-default tab-width 4 indent-tabs-mode nil) ;; tabを使わない
-(setq backup-inhibited t) ;; tmp fileを作らない
 
 (defun html-quote (start end)
   "選択範囲の「< > & 」と引用符記号「\"」をエスケープする"
@@ -20,9 +18,6 @@
       )))
 
 ;; (put 'set-goal-column 'disabled nil)
-
-(global-set-key "\C-x;" 'ns-toggle-fullscreen)
-(define-key global-map [?¥] [?\\])
 
 ;; Gaucheのデフォルトエンコーディングに合わせます。
 ;; Gaucheのデフォルトエンコーディングがeuc-jpの時はutf-8をeuc-jpに
