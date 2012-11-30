@@ -8,7 +8,10 @@
 
 ;;ruby-mode
 (add-to-list 'auto-mode-alist '("\\.r[bu]$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\Rakefile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\Gemfile$" . ruby-mode))
+
 
 ;;haml-mode
 (require 'haml-mode)
