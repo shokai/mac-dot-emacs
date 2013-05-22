@@ -55,6 +55,9 @@
 (global-auto-complete-mode "enter")
 (define-key ac-complete-mode-map "\C-n" 'ac-next)
 (define-key ac-complete-mode-map "\C-p" 'ac-previous)
+(setq ac-modes
+      (append ac-modes
+              (list 'sass-mode 'conf-mode)))
 
 (require 'yasnippet)
 (yas/global-mode 1)
