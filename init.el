@@ -3,6 +3,8 @@
 
 (setq-default tab-width 4 indent-tabs-mode nil) ;; disable tab
 (setq backup-inhibited t) ;; disable tmp file
+(setq auto-save-default nil)
+(setq make-backup-files nil)
 (define-key global-map [?¥] [?\\])
 (global-set-key "\C-x;" 'ns-toggle-fullscreen) ;; for Cocoa Emacs
 
