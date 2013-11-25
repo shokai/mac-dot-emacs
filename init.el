@@ -59,7 +59,7 @@
 (define-key ac-complete-mode-map "\C-p" 'ac-previous)
 (setq ac-modes
       (append ac-modes
-              (list 'sass-mode 'conf-mode)))
+              (list 'sass-mode 'conf-mode 'coffee-mode)))
 
 (require 'yasnippet)
 (yas/global-mode 1)
