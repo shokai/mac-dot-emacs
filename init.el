@@ -74,3 +74,5 @@
 (add-hook 'find-file-hook 'ajc-4-jsp-find-file-hook)
 
 (put 'set-goal-column 'disabled nil)
+
+(require 'go-autocomplete)
