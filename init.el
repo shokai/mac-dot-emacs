@@ -12,6 +12,9 @@
 (require 'go-mode)
 (add-to-list 'auto-mode-alist '("\\.go$" . go-mode))
 
+;;c++-mode (for arduino)
+(add-to-list 'auto-mode-alist '("\\.ino$" . c++-mode))
+
 ;;ruby-mode
 (add-to-list 'auto-mode-alist '("\\.r[bu]$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
