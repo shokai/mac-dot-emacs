@@ -7,6 +7,7 @@
 (setq make-backup-files nil)
 (define-key global-map [?¥] [?\\])
 (global-set-key "\C-x;" 'ns-toggle-fullscreen) ;; for Cocoa Emacs
+(column-number-mode t)
 
 ;;go-mode
 (require 'go-mode)
