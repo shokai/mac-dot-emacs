@@ -9,6 +9,10 @@
 (global-set-key "\C-x;" 'ns-toggle-fullscreen) ;; for Cocoa Emacs
 (column-number-mode t)
 
+(require 'highlight-indentation)
+(set-face-background 'highlight-indentation-face "#608")
+(set-face-background 'highlight-indentation-current-column-face "#93B")
+
 ;;go-mode
 (require 'go-mode)
 (add-to-list 'auto-mode-alist '("\\.go$" . go-mode))
