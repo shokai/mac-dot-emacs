@@ -8,6 +8,12 @@
 (define-key global-map [?¥] [?\\])
 (global-set-key "\C-x;" 'ns-toggle-fullscreen) ;; for Cocoa Emacs
 (column-number-mode t)
+(setq-default show-trailing-whitespace t) ;; 行末space
+(add-hook 'font-lock-mode-hook ;; 全角space highlight
+          (lambda ()
+            (font-lock-add-keywords
+             nil
+             '(("　" 0 'trailing-whitespace prepend)))))
 
 (require 'highlight-indentation)
 (set-face-background 'highlight-indentation-face "#608")
