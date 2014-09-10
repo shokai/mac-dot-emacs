@@ -15,6 +15,8 @@
              nil
              '(("　" 0 'trailing-whitespace prepend)))))
 
+(require 'ndmacro) (global-set-key (kbd "C-o") 'ndmacro)
+
 (require 'highlight-indentation)
 (set-face-background 'highlight-indentation-face "#608")
 (set-face-background 'highlight-indentation-current-column-face "#93B")
