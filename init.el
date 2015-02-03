@@ -21,6 +21,9 @@
 (set-face-background 'highlight-indentation-face "#608")
 (set-face-background 'highlight-indentation-current-column-face "#93B")
 
+;;c-mode
+(defvar c-basic-offset 2)
+
 ;;go-mode
 (require 'go-mode)
 (add-to-list 'auto-mode-alist '("\\.go$" . go-mode))
@@ -70,6 +73,10 @@
 
 ;;javascript-mode
 (setq js-indent-level 2)
+
+;;es6-mode
+(require 'js2-mode)
+(add-to-list 'auto-mode-alist '("\\.es6$" . js2-mode))
 
 ;;auto complete
 (require 'auto-complete)
