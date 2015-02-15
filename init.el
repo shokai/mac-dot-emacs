@@ -1,4 +1,4 @@
-(add-to-list 'load-path "~/.emacs.d")
+(add-to-list 'load-path "~/.emacs.d/src")
 (load "~/.emacs.d/scratch.el")
 
 (setq-default tab-width 4 indent-tabs-mode nil) ;; disable tab
