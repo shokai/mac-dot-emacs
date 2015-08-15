@@ -79,6 +79,9 @@
 (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.es6$" . js2-mode))
 
+(require 'elixir-mode)
+(add-to-list 'auto-mode-alist '("\\.exs$" . elixir-mode))
+
 ;;auto complete
 (require 'auto-complete)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
