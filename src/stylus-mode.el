@@ -39,19 +39,30 @@
      '("return" "if" "else" "unless" "for" "in" "true" "false")))
   "Stylus keywords.")
 
-(setq stylus-font-lock-keywords
-      `(
-        (,"^[ {2,}]+[a-z0-9_:\\-]+[ ]" 0 font-lock-variable-name-face)
-        (,"^//.*" 0 font-lock-comment-face)
-        (,"\\(::?\\(root\\|nth-child\\|nth-last-child\\|nth-of-type\\|nth-last-of-type\\|first-child\\|last-child\\|first-of-type\\|last-of-type\\|only-child\\|only-of-type\\|empty\\|link\\|visited\\|active\\|hover\\|focus\\|target\\|lang\\|enabled\\|disabled\\|checked\\|not\\)\\)*" . font-lock-type-face) ;; pseudoSelectors
-        (,(concat "[^_$]?\\<\\(" stylus-colours "\\)\\>[^_]?")
-         0 font-lock-constant-face)
-        (,(concat "[^_$]?\\<\\(" stylus-keywords "\\)\\>[^_]?")
-         0 font-lock-keyword-face)
-        (,"\\([0-9]+:?\\(em\\|ex\\|px\\|mm\\|cm\\|in\\|pt\\|pc\\|deg\\|rad\\|grad\\|ms\\|s\\|Hz\\|kHz\\|rem\\|%\\)\\)" 0 font-lock-constant-face)
-        (,"#\\w+" 0 font-lock-keyword-face)
-        (,"$\\w+" 0 font-lock-variable-name-face)
-        ))
+(defvar stylus-font-lock-keywords
+  `(
+    (,"^[ {2,}]+[a-z0-9_:\\-]+[ ]" 0 font-lock-variable-name-face)
+    (,"\\(::?\\(root\\|nth-child\\|nth-last-child\\|nth-of-type\\|nth-last-of-type\\|first-child\\|last-child\\|first-of-type\\|last-of-type\\|only-child\\|only-of-type\\|empty\\|link\\|visited\\|active\\|hover\\|focus\\|target\\|lang\\|enabled\\|disabled\\|checked\\|not\\)\\)*" . font-lock-type-face) ;; pseudoSelectors
+    (,(concat "[^_$]?\\<\\(" stylus-colours "\\)\\>[^_]?")
+     0 font-lock-constant-face)
+    (,(concat "[^_$]?\\<\\(" stylus-keywords "\\)\\>[^_]?")
+     0 font-lock-keyword-face)
+    (,"#\\w[a-zA-Z0-9\\-]+" 0 font-lock-keyword-face) ; id selectors (also colors...)
+    (,"\\([.0-9]+:?\\(em\\|ex\\|px\\|mm\\|cm\\|in\\|pt\\|pc\\|deg\\|rad\\|grad\\|ms\\|s\\|Hz\\|kHz\\|rem\\|%\\)\\b\\)" 0 font-lock-constant-face)
+    (,"\\b[0-9]+\\b" 0 font-lock-constant-face)
+    (,"\\.\\w[a-zA-Z0-9\\-]+" 0 font-lock-type-face) ; class names
+    (,"$\\w+" 0 font-lock-variable-name-face)
+    (,"@\\w[a-zA-Z0-9\\-]+" 0 font-lock-preprocessor-face) ; directives and backreferences
+    ))
+
+(defvar stylus-syntax-table
+  (let ((syntable (make-syntax-table)))
+    (modify-syntax-entry ?\/ ". 124b" syntable)
+    (modify-syntax-entry ?* ". 23" syntable)
+    (modify-syntax-entry ?\n "> b" syntable)
+    (modify-syntax-entry ?' "\"" syntable)
+    syntable)
+  "Syntax table for `stylus-mode'.")
 
 (defun stylus-region-for-sexp ()
   "Selects the current sexp as the region"
@@ -72,11 +83,20 @@
 (define-derived-mode stylus-mode sws-mode
   "Stylus"
   "Major mode for editing stylus node.js templates"
-  (kill-all-local-variables)
   (setq tab-width 2)
 
   (setq mode-name "Stylus")
   (setq major-mode 'stylus-mode)
+
+  ;; syntax table
+  (set-syntax-table stylus-syntax-table)
+
+  ;; highlight syntax
+  (setq font-lock-defaults '(stylus-font-lock-keywords))
+
+  ;; comments
+  (set (make-local-variable 'comment-start) "//")
+  (set (make-local-variable 'comment-end) "")
 
   ;; default tab width
   (setq sws-tab-width 2)
@@ -86,15 +106,11 @@
 
   (setq indent-region-function 'sws-indent-region)
 
-
   ;; keymap
-  (use-local-map stylus-mode-map)
-
-  ;; highlight syntax
-  (setq font-lock-defaults '(stylus-font-lock-keywords)))
+  (use-local-map stylus-mode-map))
 
 ;;;###autoload
-(add-to-list 'auto-mode-alist '("\\.styl$" . stylus-mode))
+(add-to-list 'auto-mode-alist '("\\.styl\\'" . stylus-mode))
 
 (provide 'stylus-mode)
 ;;; stylus-mode.el ends here
