@@ -101,7 +101,7 @@
 (define-key ac-complete-mode-map "\C-p" 'ac-previous)
 (setq ac-modes
       (append ac-modes
-              (list 'sass-mode 'conf-mode 'coffee-mode)))
+              (list 'sass-mode 'conf-mode 'coffee-mode 'js2-mode 'js2-jsx-mode 'jade-mode 'stylus-mode)))
 
 (require 'yasnippet)
 (yas/global-mode 1)
