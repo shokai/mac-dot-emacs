@@ -83,6 +83,10 @@
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode))
+(add-hook 'js2-mode-hook
+          (lambda ()
+            (set (make-local-variable 'js2-indent-switch-body) t)
+            ))
 
 (require 'elixir-mode)
 (add-to-list 'auto-mode-alist '("\\.exs$" . elixir-mode))
