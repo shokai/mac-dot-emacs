@@ -44,11 +44,10 @@
 (require 'haml-mode)
 (add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode))
 
-;;sass-mode
-(require 'sass-mode)
-(add-to-list 'auto-mode-alist '("\\.sass$" . sass-mode))
-(add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode))
-(add-to-list 'auto-mode-alist '("\\.css$" . sass-mode))
+;;scss-mode
+(require 'scss-mode)
+(add-to-list 'auto-mode-alist '("\\.sass$" . scss-mode))
+(add-to-list 'auto-mode-alist '("\\.scss$" . scss-mode))
 
 ;;coffee-script-mode
 (require 'coffee-mode)
@@ -101,7 +100,7 @@
 (define-key ac-complete-mode-map "\C-p" 'ac-previous)
 (setq ac-modes
       (append ac-modes
-              (list 'sass-mode 'conf-mode 'coffee-mode 'js2-mode 'js2-jsx-mode 'jade-mode 'stylus-mode)))
+              (list 'scss-mode 'conf-mode 'coffee-mode 'js2-mode 'js2-jsx-mode 'jade-mode 'stylus-mode)))
 
 (require 'yasnippet)
 (yas/global-mode 1)
