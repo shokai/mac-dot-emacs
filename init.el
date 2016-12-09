@@ -44,6 +44,9 @@
 (require 'haml-mode)
 (add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode))
 
+;;css-mode
+(setq css-indent-offset 2)
+
 ;;scss-mode
 (require 'scss-mode)
 (add-to-list 'auto-mode-alist '("\\.sass$" . scss-mode))
