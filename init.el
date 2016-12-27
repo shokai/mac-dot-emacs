@@ -105,8 +105,6 @@
 (add-to-list 'auto-mode-alist '("\\.exs$" . elixir-mode))
 
 ;;auto complete
-(require 'auto-complete)
-(require 'auto-complete-config)
 (ac-config-default)
 (global-auto-complete-mode "enter")
 (define-key ac-complete-mode-map "\C-n" 'ac-next)
