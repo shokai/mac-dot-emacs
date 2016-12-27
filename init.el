@@ -49,7 +49,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (auto-complete ## yasnippet)))
+ '(package-selected-packages (quote (js2-mode auto-complete yasnippet)))
  '(ruby-insert-encoding-magic-comment nil))
 
 ;;haml-mode
@@ -91,7 +91,6 @@
 (setq js-indent-level 2)
 
 ;;es6-mode
-(require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.es6$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
