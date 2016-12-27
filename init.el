@@ -24,10 +24,6 @@
 
 (require 'ndmacro) (global-set-key (kbd "C-o") 'ndmacro)
 
-(require 'highlight-indentation)
-(set-face-background 'highlight-indentation-face "#608")
-(set-face-background 'highlight-indentation-current-column-face "#93B")
-
 ;;c-mode
 (defvar c-basic-offset 2)
 
@@ -51,7 +47,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (sass-mode scss-mode coffee-mode js2-mode auto-complete ## yasnippet)))
+    (highlight-indentation sass-mode scss-mode coffee-mode js2-mode auto-complete ## yasnippet)))
  '(ruby-insert-encoding-magic-comment nil))
 
 ;;css-mode
