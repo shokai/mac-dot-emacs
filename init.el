@@ -49,7 +49,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (js2-mode auto-complete yasnippet)))
+ '(package-selected-packages (quote (coffee-mode js2-mode auto-complete ## yasnippet)))
  '(ruby-insert-encoding-magic-comment nil))
 
 ;;haml-mode
@@ -65,7 +65,6 @@
 (add-to-list 'auto-mode-alist '("\\.scss$" . scss-mode))
 
 ;;coffee-script-mode
-(require 'coffee-mode)
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("\\.cjsx$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
