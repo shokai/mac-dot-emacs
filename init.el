@@ -51,19 +51,11 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (scss-mode coffee-mode js2-mode auto-complete ## yasnippet)))
+    (sass-mode scss-mode coffee-mode js2-mode auto-complete ## yasnippet)))
  '(ruby-insert-encoding-magic-comment nil))
-
-;;haml-mode
-(require 'haml-mode)
-(add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode))
 
 ;;css-mode
 (setq css-indent-offset 2)
-
-;;scss-mode
-(add-to-list 'auto-mode-alist '("\\.sass$" . scss-mode))
-(add-to-list 'auto-mode-alist '("\\.scss$" . scss-mode))
 
 ;;coffee-script-mode
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
