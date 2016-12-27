@@ -45,7 +45,11 @@
 (add-to-list 'auto-mode-alist '("\\Rakefile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\Gemfile$" . ruby-mode))
 (custom-set-variables
- '(package-selected-packages (quote (## yasnippet)))
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (auto-complete ## yasnippet)))
  '(ruby-insert-encoding-magic-comment nil))
 
 ;;haml-mode
@@ -103,7 +107,6 @@
 
 ;;auto complete
 (require 'auto-complete)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (require 'auto-complete-config)
 (ac-config-default)
 (global-auto-complete-mode "enter")
@@ -113,8 +116,7 @@
       (append ac-modes
               (list 'scss-mode 'conf-mode 'coffee-mode 'js2-mode 'js2-jsx-mode 'jade-mode 'stylus-mode)))
 
-(add-to-list 'load-path
-             "~/.emacs.d/elpa/yasnippet-0.11.0")
+;;yasnippet
 (require 'yasnippet)
 (yas/global-mode 1)
 
@@ -126,3 +128,9 @@
 (put 'set-goal-column 'disabled nil)
 
 (require 'go-autocomplete)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
