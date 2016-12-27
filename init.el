@@ -65,7 +65,7 @@
 (add-hook 'coffee-mode-hook
           (lambda() (coffee-custom)))
 
-;;javascript-mode
+;;js2-mode
 (setq js-indent-level 2)
 
 ;;es6-mode
