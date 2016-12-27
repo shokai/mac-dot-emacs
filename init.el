@@ -92,8 +92,7 @@
               (list 'scss-mode 'conf-mode 'coffee-mode 'js2-mode 'js2-jsx-mode 'jade-mode 'stylus-mode)))
 
 ;;yasnippet
-(require 'yasnippet)
-(yas/global-mode 1)
+(yas-global-mode 1)
 
 (require 'ajc-java-complete-config)
 (set 'ajc-tag-file "~/.emacs.d/ajc.tag")
