@@ -1,6 +1,7 @@
 ;;; stylus-mode.el --- Major mode for editing .jade files
 ;;;
 ;;; URL: https://github.com/brianc/jade-mode
+;; Package-Version: 20150313.812
 ;;; Author: Brian M. Carlson and other contributors
 ;;; Package-Requires: ((sws-mode "0"))
 ;;;

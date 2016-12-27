@@ -47,7 +47,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (highlight-indentation sass-mode scss-mode coffee-mode js2-mode auto-complete ## yasnippet)))
+    (jade-mode stylus-mode highlight-indentation highlight-indent-guides sass-mode scss-mode coffee-mode js2-mode auto-complete ## yasnippet)))
  '(ruby-insert-encoding-magic-comment nil))
 
 ;;css-mode
@@ -64,13 +64,6 @@
   )
 (add-hook 'coffee-mode-hook
           (lambda() (coffee-custom)))
-
-;;jade-mode
-(require 'stylus-mode)
-(require 'sws-mode)
-(require 'jade-mode)
-(add-to-list 'auto-mode-alist '("\\.styl$" . stylus-mode))
-(add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
 
 ;;scala-mode
 (require 'scala-mode-auto)
