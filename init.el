@@ -1,3 +1,5 @@
+(package-initialize)
+
 (add-to-list 'load-path "~/.emacs.d/src")
 (load "~/.emacs.d/scratch.el")
 
@@ -38,6 +40,7 @@
 (add-to-list 'auto-mode-alist '("\\Rakefile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\Gemfile$" . ruby-mode))
 (custom-set-variables
+ '(package-selected-packages (quote (## yasnippet)))
  '(ruby-insert-encoding-magic-comment nil))
 
 ;;haml-mode
@@ -105,8 +108,10 @@
       (append ac-modes
               (list 'scss-mode 'conf-mode 'coffee-mode 'js2-mode 'js2-jsx-mode 'jade-mode 'stylus-mode)))
 
+(add-to-list 'load-path
+             "~/.emacs.d/elpa/yasnippet-0.11.0")
 (require 'yasnippet)
-;;(yas/global-mode 1)
+(yas/global-mode 1)
 
 (require 'ajc-java-complete-config)
 (set 'ajc-tag-file "~/.emacs.d/ajc.tag")
