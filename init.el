@@ -67,6 +67,7 @@
 
 ;;js2-mode
 (setq js-indent-level 2)
+(setq js-switch-indent-offset 2)
 
 ;;es6-mode
 (add-to-list 'auto-mode-alist '("\\.es6$" . js2-mode))
