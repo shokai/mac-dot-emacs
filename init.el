@@ -47,7 +47,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (scala-mode jade-mode stylus-mode highlight-indentation highlight-indent-guides sass-mode scss-mode coffee-mode js2-mode auto-complete ## yasnippet)))
+    (rjsx-mode scala-mode jade-mode stylus-mode highlight-indentation highlight-indent-guides sass-mode scss-mode coffee-mode js2-mode auto-complete ## yasnippet)))
  '(ruby-insert-encoding-magic-comment nil))
 
 ;;css-mode
