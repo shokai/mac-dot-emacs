@@ -46,8 +46,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   (quote
-    (prettier-js rjsx-mode scala-mode jade-mode stylus-mode highlight-indentation highlight-indent-guides sass-mode scss-mode coffee-mode js2-mode auto-complete yasnippet)))
+   '(list-packages-ext prettier-js rjsx-mode scala-mode jade-mode stylus-mode highlight-indentation highlight-indent-guides sass-mode scss-mode coffee-mode auto-complete yasnippet))
  '(ruby-insert-encoding-magic-comment nil))
 
 ;;css-mode
@@ -65,20 +64,9 @@
 (add-hook 'coffee-mode-hook
           (lambda() (coffee-custom)))
 
-;;js2-mode
+;;js-mode
 (setq js-indent-level 2)
 (setq js-switch-indent-offset 2)
-
-;;es6-mode
-(add-to-list 'auto-mode-alist '("\\.es6$" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx$" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
-(add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode))
-(add-hook 'js2-mode-hook
-          (lambda ()
-            (set (make-local-variable 'js2-indent-switch-body) t)
-            ))
 
 (require 'elixir-mode)
 (add-to-list 'auto-mode-alist '("\\.exs$" . elixir-mode))
@@ -90,7 +78,7 @@
 (define-key ac-complete-mode-map "\C-p" 'ac-previous)
 (setq ac-modes
       (append ac-modes
-              (list 'scss-mode 'conf-mode 'coffee-mode 'js2-mode 'js2-jsx-mode 'jade-mode 'stylus-mode)))
+              (list 'scss-mode 'conf-mode 'coffee-mode 'jade-mode 'stylus-mode)))
 
 ;;yasnippet
 (yas-global-mode 1)
@@ -111,6 +99,6 @@
  )
 
 ;;prettier
-(add-hook 'js2-mode-hook 'prettier-js-mode)
+(add-hook 'js-mode-hook 'prettier-js-mode)
 (add-hook 'web-mode-hook 'prettier-js-mode)
 (add-hook 'scss-mode-hook 'prettier-js-mode)
