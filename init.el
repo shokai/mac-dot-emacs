@@ -1,3 +1,5 @@
+(global-font-lock-mode t)
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
@@ -46,7 +48,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(list-packages-ext prettier-js rjsx-mode scala-mode jade-mode stylus-mode highlight-indentation highlight-indent-guides sass-mode scss-mode coffee-mode auto-complete yasnippet))
+   '(yaml-mode list-packages-ext prettier-js rjsx-mode scala-mode jade-mode stylus-mode highlight-indentation highlight-indent-guides sass-mode scss-mode coffee-mode auto-complete yasnippet))
  '(ruby-insert-encoding-magic-comment nil))
 
 ;;css-mode
@@ -103,3 +105,4 @@
 (add-hook 'web-mode-hook 'prettier-js-mode)
 (add-hook 'scss-mode-hook 'prettier-js-mode)
 (add-hook 'conf-mode-hook 'prettier-js-mode)
+(add-hook 'yaml-mode-hook 'prettier-js-mode)
