@@ -48,7 +48,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(yaml-mode list-packages-ext prettier-js rjsx-mode scala-mode jade-mode stylus-mode highlight-indentation highlight-indent-guides sass-mode scss-mode coffee-mode auto-complete yasnippet))
+   '(typescript-mode yaml-mode list-packages-ext prettier-js rjsx-mode scala-mode jade-mode stylus-mode highlight-indentation highlight-indent-guides sass-mode scss-mode coffee-mode auto-complete yasnippet))
  '(ruby-insert-encoding-magic-comment nil))
 
 ;;css-mode
@@ -69,6 +69,9 @@
 ;;js-mode
 (setq js-indent-level 2)
 (setq js-switch-indent-offset 2)
+
+;;typescript-mode
+(setq typescript-indent-level 2)
 
 (require 'elixir-mode)
 (add-to-list 'auto-mode-alist '("\\.exs$" . elixir-mode))
@@ -102,6 +105,7 @@
 
 ;;prettier
 (add-hook 'js-mode-hook 'prettier-js-mode)
+(add-hook 'typescript-mode-hook 'prettier-js-mode)
 (add-hook 'web-mode-hook 'prettier-js-mode)
 (add-hook 'scss-mode-hook 'prettier-js-mode)
 (add-hook 'conf-mode-hook 'prettier-js-mode)
