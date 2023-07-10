@@ -83,7 +83,7 @@
 (define-key ac-complete-mode-map "\C-p" 'ac-previous)
 (setq ac-modes
       (append ac-modes
-              (list 'scss-mode 'conf-mode 'coffee-mode 'jade-mode 'stylus-mode)))
+              (list 'typescript-mode 'scss-mode 'conf-mode 'coffee-mode 'jade-mode 'stylus-mode)))
 
 ;;yasnippet
 (yas-global-mode 1)
