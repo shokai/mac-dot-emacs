@@ -48,7 +48,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(typescript-mode yaml-mode list-packages-ext prettier-js rjsx-mode scala-mode jade-mode stylus-mode highlight-indentation highlight-indent-guides sass-mode scss-mode coffee-mode auto-complete yasnippet))
+   '(markdown-mode typescript-mode yaml-mode list-packages-ext prettier-js rjsx-mode scala-mode jade-mode stylus-mode highlight-indentation highlight-indent-guides sass-mode scss-mode coffee-mode auto-complete yasnippet))
  '(ruby-insert-encoding-magic-comment nil))
 
 ;;css-mode
