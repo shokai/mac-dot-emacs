@@ -110,3 +110,4 @@
 (add-hook 'scss-mode-hook 'prettier-js-mode)
 (add-hook 'conf-mode-hook 'prettier-js-mode)
 (add-hook 'yaml-mode-hook 'prettier-js-mode)
+(add-hook 'markdown-mode-hook 'prettier-js-mode)
