@@ -93,6 +93,9 @@
 
 ;; エラー回避のための追加設定
 (setq ac-trigger-commands-on-completing nil) ;タイマー関連のエラー防止
+;; sequencepエラー回避のための設定
+(setq ac-use-timer nil)                 ; タイマーを無効化
+(setq ac-auto-show-menu nil)            ; 自動メニュー表示を無効化
 ;; キーバインドの設定（ac-config-defaultの後に行うことで確実に反映される）
 (with-eval-after-load 'auto-complete
   (define-key ac-completing-map "\C-n" 'ac-next)
@@ -111,8 +114,7 @@
 (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
 (setq ac-delay 0.2)                     ; 自動補完を開始するまでの時間
 (setq ac-auto-start 2)                  ; 2文字以上で自動補完を開始
-;; 明示的な型でメニュー表示設定（エラー回避）
-(setq ac-auto-show-menu t)              ; メニューを自動表示（タイマーなしで常に表示）
+;; メニュー表示設定
 (setq ac-use-comphist t)                ; 候補の履歴を考慮
 (setq ac-candidate-limit 20)            ; 候補の最大表示数
 (setq ac-use-quick-help t)              ; クイックヘルプを使用
