@@ -24,8 +24,6 @@
              nil
              '(("　" 0 'trailing-whitespace prepend)))))
 
-(require 'ndmacro) (global-set-key (kbd "C-o") 'ndmacro)
-
 ;;c-mode
 (defvar c-basic-offset 2)
 
@@ -76,8 +74,6 @@
 ;;typescript-mode
 (setq typescript-indent-level 2)
 
-(require 'elixir-mode)
-(add-to-list 'auto-mode-alist '("\\.exs$" . elixir-mode))
 
 ;;auto complete
 (ac-config-default)
@@ -91,14 +87,7 @@
 ;;yasnippet
 (yas-global-mode 1)
 
-(require 'ajc-java-complete-config)
-(set 'ajc-tag-file "~/.emacs.d/ajc.tag")
-(add-hook 'java-mode-hook 'ajc-java-complete-mode)
-(add-hook 'find-file-hook 'ajc-4-jsp-find-file-hook)
-
 (put 'set-goal-column 'disabled nil)
-
-(require 'go-autocomplete)
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
