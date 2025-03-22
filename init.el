@@ -46,7 +46,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(## auto-complete coffee-mode jade-mode list-packages-ext
+   '(## coffee-mode jade-mode list-packages-ext
         markdown-mode prettier-js sass-mode scala-mode
         scss-mode stylus-mode typescript-mode yaml-mode))
  '(ruby-insert-encoding-magic-comment nil))
@@ -74,16 +74,6 @@
 (setq typescript-indent-level 2)
 
 
-;;auto complete
-;; 最小限の設定
-(unless (package-installed-p 'auto-complete)
-  (package-refresh-contents)
-  (package-install 'auto-complete))
-
-(require 'auto-complete)
-(require 'auto-complete-config)
-(ac-config-default)
-(global-auto-complete-mode 1)
 
 
 (put 'set-goal-column 'disabled nil)
