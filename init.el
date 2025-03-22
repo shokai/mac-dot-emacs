@@ -46,7 +46,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(## auto-complete coffee-mode jade-mode list-packages-ext
+   '(## coffee-mode jade-mode list-packages-ext
         markdown-mode prettier-js sass-mode scala-mode
         scss-mode stylus-mode typescript-mode yaml-mode))
  '(ruby-insert-encoding-magic-comment nil))
