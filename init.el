@@ -48,7 +48,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(markdown-mode typescript-mode yaml-mode list-packages-ext prettier-js rjsx-mode scala-mode jade-mode stylus-mode highlight-indentation highlight-indent-guides sass-mode scss-mode coffee-mode auto-complete yasnippet))
+   '(## auto-complete coffee-mode highlight-indent-guides
+        highlight-indentation jade-mode list-packages-ext
+        markdown-mode prettier-js rjsx-mode sass-mode scala-mode
+        scss-mode stylus-mode typescript-mode yaml-mode yasnippet))
  '(ruby-insert-encoding-magic-comment nil))
 
 ;;css-mode
@@ -78,7 +81,7 @@
 
 ;;auto complete
 (ac-config-default)
-(global-auto-complete-mode "enter")
+(global-auto-complete-mode 1)
 (define-key ac-complete-mode-map "\C-n" 'ac-next)
 (define-key ac-complete-mode-map "\C-p" 'ac-previous)
 (setq ac-modes
