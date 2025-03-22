@@ -48,7 +48,7 @@
  '(package-selected-packages
    '(## auto-complete coffee-mode jade-mode list-packages-ext
         markdown-mode prettier-js sass-mode scala-mode
-        scss-mode stylus-mode typescript-mode yaml-mode yasnippet))
+        scss-mode stylus-mode typescript-mode yaml-mode))
  '(ruby-insert-encoding-magic-comment nil))
 
 ;;css-mode
@@ -121,8 +121,6 @@
 (setq ac-dwim t)                        ; Do What I Mean機能を有効化
 (setq ac-use-menu-map t)                ; 補完メニュー表示時にC-n/C-pで補完候補選択
 
-;;yasnippet
-(yas-global-mode 1)
 
 (put 'set-goal-column 'disabled nil)
 (custom-set-faces
