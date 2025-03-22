@@ -46,7 +46,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(## coffee-mode jade-mode list-packages-ext
+   '(## company coffee-mode jade-mode list-packages-ext
         markdown-mode prettier-js sass-mode scala-mode
         scss-mode stylus-mode typescript-mode yaml-mode))
  '(ruby-insert-encoding-magic-comment nil))
@@ -74,6 +74,16 @@
 (setq typescript-indent-level 2)
 
 
+;;company-mode
+(unless (package-installed-p 'company)
+  (package-refresh-contents)
+  (package-install 'company))
+
+(require 'company)
+(global-company-mode 1)
+(setq company-idle-delay 0.3)
+(setq company-minimum-prefix-length 2)
+(setq company-selection-wrap-around t)
 
 
 (put 'set-goal-column 'disabled nil)
