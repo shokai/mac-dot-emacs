@@ -75,13 +75,36 @@
 
 
 ;;auto complete
+(require 'auto-complete)
+(require 'auto-complete-config)
+;; デフォルト設定を適用
 (ac-config-default)
+;; グローバルモードを有効化（全てのバッファで自動補完を有効に）
 (global-auto-complete-mode 1)
-(define-key ac-complete-mode-map "\C-n" 'ac-next)
-(define-key ac-complete-mode-map "\C-p" 'ac-previous)
-(setq ac-modes
-      (append ac-modes
-              (list 'typescript-mode 'scss-mode 'conf-mode 'coffee-mode 'jade-mode 'stylus-mode)))
+;; キーバインドの設定（ac-config-defaultの後に行うことで確実に反映される）
+(with-eval-after-load 'auto-complete
+  (define-key ac-completing-map "\C-n" 'ac-next)
+  (define-key ac-completing-map "\C-p" 'ac-previous))
+;; ac-modesに追加するモードを直接指定
+(add-to-list 'ac-modes 'typescript-mode)
+(add-to-list 'ac-modes 'scss-mode)
+(add-to-list 'ac-modes 'conf-mode)
+(add-to-list 'ac-modes 'coffee-mode)
+(add-to-list 'ac-modes 'jade-mode)
+(add-to-list 'ac-modes 'stylus-mode)
+;; パフォーマンス向上のための設定
+(setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
+(setq ac-delay 0.2)                     ; 自動補完を開始するまでの時間
+(setq ac-auto-start 2)                  ; 2文字以上で自動補完を開始
+(setq ac-auto-show-menu 0.8)            ; メニューを表示するまでの時間（数値は秒数）
+(setq-default ac-auto-show-menu 0.8)    ; より明示的に設定
+(setq ac-use-comphist t)                ; 候補の履歴を考慮
+(setq ac-candidate-limit 20)            ; 候補の最大表示数
+(setq ac-use-quick-help t)              ; クイックヘルプを使用
+(setq ac-quick-help-delay 1.0)          ; クイックヘルプの表示までの時間
+(setq ac-ignore-case 'smart)            ; スマートケース（小文字の場合は大文字小文字を区別しない）
+(setq ac-dwim t)                        ; Do What I Mean機能を有効化
+(setq ac-use-menu-map t)                ; 補完メニュー表示時にC-n/C-pで補完候補選択
 
 ;;yasnippet
 (yas-global-mode 1)
