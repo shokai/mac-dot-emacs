@@ -75,29 +75,44 @@
 
 
 ;;auto complete
+;; パッケージが正しくインストールされているか確認
+(unless (package-installed-p 'auto-complete)
+  (package-refresh-contents)
+  (package-install 'auto-complete))
+;; パッケージが正しくインストールされているか確認
+(unless (package-installed-p 'popup)
+  (package-refresh-contents)
+  (package-install 'popup))
+
 (require 'auto-complete)
 (require 'auto-complete-config)
 ;; デフォルト設定を適用
 (ac-config-default)
 ;; グローバルモードを有効化（全てのバッファで自動補完を有効に）
 (global-auto-complete-mode 1)
+
+;; エラー回避のための追加設定
+(setq ac-trigger-commands-on-completing nil) ;タイマー関連のエラー防止
 ;; キーバインドの設定（ac-config-defaultの後に行うことで確実に反映される）
 (with-eval-after-load 'auto-complete
   (define-key ac-completing-map "\C-n" 'ac-next)
   (define-key ac-completing-map "\C-p" 'ac-previous))
-;; ac-modesに追加するモードを直接指定
-(add-to-list 'ac-modes 'typescript-mode)
-(add-to-list 'ac-modes 'scss-mode)
-(add-to-list 'ac-modes 'conf-mode)
-(add-to-list 'ac-modes 'coffee-mode)
-(add-to-list 'ac-modes 'jade-mode)
-(add-to-list 'ac-modes 'stylus-mode)
+;; カスタムモードの追加（エラー回避のため、after-load内で設定）
+(with-eval-after-load 'auto-complete
+  ;; まず正しい型か確認してから追加する
+  (when (listp ac-modes)
+    (add-to-list 'ac-modes 'typescript-mode)
+    (add-to-list 'ac-modes 'scss-mode)
+    (add-to-list 'ac-modes 'conf-mode)
+    (add-to-list 'ac-modes 'coffee-mode)
+    (add-to-list 'ac-modes 'jade-mode)
+    (add-to-list 'ac-modes 'stylus-mode)))
 ;; パフォーマンス向上のための設定
 (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
 (setq ac-delay 0.2)                     ; 自動補完を開始するまでの時間
 (setq ac-auto-start 2)                  ; 2文字以上で自動補完を開始
-(setq ac-auto-show-menu 0.8)            ; メニューを表示するまでの時間（数値は秒数）
-(setq-default ac-auto-show-menu 0.8)    ; より明示的に設定
+;; 明示的な型でメニュー表示設定（エラー回避）
+(setq ac-auto-show-menu t)              ; メニューを自動表示（タイマーなしで常に表示）
 (setq ac-use-comphist t)                ; 候補の履歴を考慮
 (setq ac-candidate-limit 20)            ; 候補の最大表示数
 (setq ac-use-quick-help t)              ; クイックヘルプを使用
