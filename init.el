@@ -48,7 +48,7 @@
  '(package-selected-packages
    '(## auto-complete coffee-mode highlight-indent-guides
         highlight-indentation jade-mode list-packages-ext
-        markdown-mode prettier-js rjsx-mode sass-mode scala-mode
+        markdown-mode prettier-js sass-mode scala-mode
         scss-mode stylus-mode typescript-mode yaml-mode yasnippet))
  '(ruby-insert-encoding-magic-comment nil))
 
