@@ -97,6 +97,7 @@
 
 ;;prettier
 (add-hook 'js-mode-hook 'prettier-js-mode)
+(add-hook 'js-json-mode-hook 'prettier-js-mode)
 (add-hook 'typescript-mode-hook 'prettier-js-mode)
 (add-hook 'scss-mode-hook 'prettier-js-mode)
 (add-hook 'conf-mode-hook 'prettier-js-mode)
