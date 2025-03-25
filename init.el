@@ -47,9 +47,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(## company coffee-mode jade-mode list-packages-ext
-        markdown-mode prettier-js sass-mode scala-mode
-        scss-mode stylus-mode typescript-mode yaml-mode))
+   '(## coffee-mode company jade-mode list-packages-ext markdown-mode
+        prettier-js scala-mode stylus-mode typescript-mode web-mode
+        yaml-mode))
  '(ruby-insert-encoding-magic-comment nil))
 
 ;;css-mode
@@ -99,7 +99,10 @@
 (add-hook 'js-mode-hook 'prettier-js-mode)
 (add-hook 'js-json-mode-hook 'prettier-js-mode)
 (add-hook 'typescript-mode-hook 'prettier-js-mode)
-(add-hook 'scss-mode-hook 'prettier-js-mode)
+(add-hook 'web-mode-hook
+          (lambda ()
+            (when (string-match-p "\\.s\\(c\\|a\\)ss\\'" (buffer-file-name))
+              (prettier-js-mode))))
 (add-hook 'conf-mode-hook 'prettier-js-mode)
 (add-hook 'yaml-mode-hook 'prettier-js-mode)
 (add-hook 'markdown-mode-hook 'prettier-js-mode)
