@@ -1,6 +1,10 @@
 (global-font-lock-mode t)
 (menu-bar-mode -1)  ;; メニューバーを非表示にする
 
+;; 外部で編集されたファイルを自動的にリロードする
+(global-auto-revert-mode 1)
+(setq global-auto-revert-non-file-buffers t)
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
