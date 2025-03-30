@@ -78,6 +78,28 @@
 ;;typescript-mode
 (setq typescript-indent-level 2)
 
+;;tide (TypeScript IDE)
+(defun setup-tide-mode ()
+  (interactive)
+  (tide-setup)
+  (flycheck-mode +1)
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (eldoc-mode +1)
+  (tide-hl-identifier-mode +1)
+  (company-mode +1))
+
+;; TypeScript
+(add-hook 'typescript-mode-hook #'setup-tide-mode)
+
+;; JSXをTypeScriptモードで開く
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
+
+;; JavaScript
+(add-hook 'js-mode-hook #'setup-tide-mode)
+;; JSX
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js-mode))
+(setq tide-format-options '(:insertSpaceAfterFunctionKeywordForAnonymousFunctions t :placeOpenBraceOnNewLineForFunctions nil))
+
 
 ;;company-mode
 (unless (package-installed-p 'company)
