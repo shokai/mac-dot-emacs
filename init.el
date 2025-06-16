@@ -1,3 +1,6 @@
+;; Suppress cl package deprecation warning
+(setq byte-compile-warnings '(cl-functions))
+
 (global-font-lock-mode t)
 (menu-bar-mode -1)  ;; メニューバーを非表示にする
 
