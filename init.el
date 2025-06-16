@@ -52,7 +52,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    '(## coffee-mode company jade-mode list-packages-ext markdown-mode
-        prettier-js scala-mode stylus-mode typescript-mode web-mode
+        prettier scala-mode stylus-mode typescript-mode web-mode
         yaml-mode))
  '(ruby-insert-encoding-magic-comment nil))
 
@@ -122,13 +122,13 @@
  )
 
 ;;prettier
-(add-hook 'js-mode-hook 'prettier-js-mode)
-(add-hook 'js-json-mode-hook 'prettier-js-mode)
-(add-hook 'typescript-mode-hook 'prettier-js-mode)
+(add-hook 'js-mode-hook 'prettier-mode)
+(add-hook 'js-json-mode-hook 'prettier-mode)
+(add-hook 'typescript-mode-hook 'prettier-mode)
 (add-hook 'web-mode-hook
           (lambda ()
             (when (string-match-p "\\.s\\(c\\|a\\)ss\\'" (buffer-file-name))
-              (prettier-js-mode))))
-(add-hook 'conf-mode-hook 'prettier-js-mode)
-(add-hook 'yaml-mode-hook 'prettier-js-mode)
-(add-hook 'markdown-mode-hook 'prettier-js-mode)
+              (prettier-mode))))
+(add-hook 'conf-mode-hook 'prettier-mode)
+(add-hook 'yaml-mode-hook 'prettier-mode)
+(add-hook 'markdown-mode-hook 'prettier-mode)
