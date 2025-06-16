@@ -32,11 +32,6 @@
 ;;c-mode
 (defvar c-basic-offset 2)
 
-;;go-mode
-(require 'go-mode)
-(add-to-list 'auto-mode-alist '("\\.go$" . go-mode))
-(add-hook 'before-save-hook 'gofmt-before-save)
-
 ;;c++-mode (for arduino)
 (add-to-list 'auto-mode-alist '("\\.ino$" . c++-mode))
 
