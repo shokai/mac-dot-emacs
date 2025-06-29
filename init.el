@@ -91,6 +91,7 @@
 
 ;; JavaScript
 (add-hook 'js-mode-hook #'setup-tide-mode)
+(add-hook 'js-mode-hook (lambda () (local-set-key (kbd "M-.") 'tide-jump-to-definition)))
 ;; JSX
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js-mode))
 (setq tide-format-options '(:insertSpaceAfterFunctionKeywordForAnonymousFunctions t :placeOpenBraceOnNewLineForFunctions nil))
