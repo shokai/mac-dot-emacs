@@ -49,7 +49,10 @@
    '(## coffee-mode company jade-mode list-packages-ext markdown-mode
         prettier scala-mode stylus-mode typescript-mode web-mode
         yaml-mode))
- '(ruby-insert-encoding-magic-comment nil))
+ '(ruby-insert-encoding-magic-comment nil)
+ '(safe-local-variable-values
+   '((tide-tscompiler-executable . "./node_modules/.bin/tsc")
+     (tide-tsserver-executable . "./node_modules/.bin/tsserver"))))
 
 ;;css-mode
 (setq css-indent-offset 2)
