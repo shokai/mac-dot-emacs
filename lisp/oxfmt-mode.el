@@ -6,19 +6,15 @@
              (not (file-remote-p buffer-file-name))
              (not buffer-read-only)
              (executable-find "oxfmt"))
-    (let* ((original-buffer (current-buffer))
-           (file-name (file-name-nondirectory buffer-file-name))
+    (let* ((file-name (file-name-nondirectory buffer-file-name))
            (default-directory (file-name-directory buffer-file-name))
            (output-buffer (generate-new-buffer " *oxfmt-output*"))
-           (exit-code (with-current-buffer output-buffer
-                        (call-process-region
-                         (with-current-buffer original-buffer (point-min))
-                         (with-current-buffer original-buffer (point-max))
-                         "oxfmt" nil t nil
-                         "--stdin-filepath" file-name))))
+           (exit-code (call-process-region
+                       (point-min) (point-max)
+                       "oxfmt" nil output-buffer nil
+                       "--stdin-filepath" file-name)))
       (if (zerop exit-code)
-          (with-current-buffer original-buffer
-            (replace-buffer-contents output-buffer))
+          (replace-buffer-contents output-buffer)
         (message "oxfmt failed (exit %d)" exit-code))
       (kill-buffer output-buffer))))
 
