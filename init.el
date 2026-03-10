@@ -13,7 +13,6 @@
 (package-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
-(require 'oxfmt-mode)
 (load "~/.emacs.d/scratch.el")
 
 (setq-default tab-width 4 indent-tabs-mode nil) ;; disable tab
@@ -124,6 +123,7 @@
  )
 
 ;;oxfmt
+(require 'oxfmt-mode)
 (add-hook 'js-mode-hook 'oxfmt-mode)
 (add-hook 'js-json-mode-hook 'oxfmt-mode)
 (add-hook 'typescript-mode-hook 'oxfmt-mode)
