@@ -124,13 +124,13 @@
 
 ;;oxfmt
 (require 'oxfmt-mode)
-(add-hook 'js-mode-hook 'oxfmt-mode)
-(add-hook 'js-json-mode-hook 'oxfmt-mode)
-(add-hook 'typescript-mode-hook 'oxfmt-mode)
+(add-hook 'js-mode-hook #'oxfmt-mode)
+(add-hook 'js-json-mode-hook #'oxfmt-mode)
+(add-hook 'typescript-mode-hook #'oxfmt-mode)
 (add-hook 'web-mode-hook
           (lambda ()
             (when (and (buffer-file-name)
                        (string-match-p "\\.s\\(c\\|a\\)ss\\'" (buffer-file-name)))
               (oxfmt-mode))))
-(add-hook 'yaml-mode-hook 'oxfmt-mode)
-(add-hook 'markdown-mode-hook 'oxfmt-mode)
+(add-hook 'yaml-mode-hook #'oxfmt-mode)
+(add-hook 'markdown-mode-hook #'oxfmt-mode)
