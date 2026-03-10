@@ -12,7 +12,8 @@
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize)
 
-(add-to-list 'load-path "~/.emacs.d/src")
+(add-to-list 'load-path "~/.emacs.d/lisp")
+(require 'oxfmt-mode)
 (load "~/.emacs.d/scratch.el")
 
 (setq-default tab-width 4 indent-tabs-mode nil) ;; disable tab
@@ -47,7 +48,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    '(## coffee-mode company jade-mode list-packages-ext markdown-mode
-        prettier scala-mode stylus-mode typescript-mode web-mode
+        scala-mode stylus-mode typescript-mode web-mode
         yaml-mode))
  '(ruby-insert-encoding-magic-comment nil)
  '(safe-local-variable-values
@@ -122,14 +123,14 @@
  ;; If there is more than one, they won't work right.
  )
 
-;;prettier
-(add-hook 'js-mode-hook 'prettier-mode)
-(add-hook 'js-json-mode-hook 'prettier-mode)
-(add-hook 'typescript-mode-hook 'prettier-mode)
+;;oxfmt
+(add-hook 'js-mode-hook 'oxfmt-mode)
+(add-hook 'js-json-mode-hook 'oxfmt-mode)
+(add-hook 'typescript-mode-hook 'oxfmt-mode)
 (add-hook 'web-mode-hook
           (lambda ()
-            (when (string-match-p "\\.s\\(c\\|a\\)ss\\'" (buffer-file-name))
-              (prettier-mode))))
-(add-hook 'conf-mode-hook 'prettier-mode)
-(add-hook 'yaml-mode-hook 'prettier-mode)
-(add-hook 'markdown-mode-hook 'prettier-mode)
+            (when (and (buffer-file-name)
+                       (string-match-p "\\.s\\(c\\|a\\)ss\\'" (buffer-file-name)))
+              (oxfmt-mode))))
+(add-hook 'yaml-mode-hook 'oxfmt-mode)
+(add-hook 'markdown-mode-hook 'oxfmt-mode)
