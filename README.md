@@ -1,14 +1,10 @@
-.emacs for Mac
-==============
+# .emacs for Mac
 
-Install emacs23
----------------
+## Install emacs30
 
     % brew install emacs
 
-
-Setup
------
+## Setup
 
     % mkdir ~/.emacs.d
     % cd ~/.emacs.d
